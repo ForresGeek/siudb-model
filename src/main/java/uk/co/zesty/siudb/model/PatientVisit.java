@@ -11,6 +11,10 @@ import javax.persistence.OneToOne;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import io.katharsis.resource.annotations.JsonApiResource;
+
 @Entity
 public class PatientVisit {
 
@@ -46,6 +50,9 @@ public class PatientVisit {
 		this.specialty = specialty;
 	}
 	
+	
+	
+	@JsonIgnore
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="Apptid")
 	public Appointment getAppointment() {

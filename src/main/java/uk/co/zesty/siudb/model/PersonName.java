@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class PersonName {
 	
@@ -79,6 +81,7 @@ public class PersonName {
 	}
 
 
+	@JsonIgnore
 	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="PersonId")
 	public Person getPerson() {

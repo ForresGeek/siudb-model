@@ -5,8 +5,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import io.katharsis.resource.annotations.JsonApiResource;
+
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+
 
 @Entity
 @Table(name="personContactDetails")
@@ -51,6 +57,7 @@ public class PersonContactDetail {
 	
 	//Many contect details to 1 person.
 	//Contact details can't exist without person.
+	@JsonIgnore
 	@ManyToOne(optional = false)
 	@JoinColumn(name="PersonId")
 	public Person getPerson() {

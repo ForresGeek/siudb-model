@@ -6,6 +6,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class PersonAddress {
 
@@ -29,7 +31,7 @@ public class PersonAddress {
 		
 	}
 
-
+	@JsonIgnore
 	@ManyToOne(optional = false)
 	@JoinColumn(name="PersonId")
 	public Person getPerson() {

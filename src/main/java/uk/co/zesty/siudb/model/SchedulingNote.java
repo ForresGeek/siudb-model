@@ -7,6 +7,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import io.katharsis.resource.annotations.JsonApiResource;
+
+
+
 @Entity
 public class SchedulingNote {
 	
@@ -52,6 +58,8 @@ public class SchedulingNote {
 		this.id = id;
 	}
 	
+	
+	@JsonIgnore
 	@ManyToOne(optional = false)
 	@JoinColumn(name="ApptId")
 	public Appointment getAppointment() {

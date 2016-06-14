@@ -16,6 +16,13 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import io.katharsis.resource.annotations.JsonApiId;
+import io.katharsis.resource.annotations.JsonApiResource;
+import io.katharsis.resource.annotations.JsonApiToMany;
+
 import javax.persistence.Id;
 import javax.persistence.Index;
 
@@ -23,6 +30,7 @@ import javax.persistence.Index;
 @Table(
 	    indexes = { @Index(columnList="surname,forename"),@Index(columnList="guid") }
 		) 
+@JsonApiResource(type = "person")
 public class Person {
 	
 
@@ -44,45 +52,85 @@ public class Person {
 	private Set <PersonAddress> addresses;
 	
 	
+	private Set <Appointment> appointments;
 	
+	
+	
+	
+	
+	@JsonApiToMany
+	@JsonProperty
+	@OneToMany(mappedBy = "person", cascade=CascadeType.ALL,orphanRemoval=true)
+	public Set<Appointment> getAppointments() {
+		return appointments;
+	}
+
+
+
+
+	public void setAppointments(Set<Appointment> appointments) {
+		this.appointments = appointments;
+	}
+
+
+
+
 	public Person()
 	{
 		identifiers = new HashSet<PersonIdentifier>();
 		contacts = new HashSet<PersonContactDetail>();
 		addresses = new HashSet<PersonAddress>();
+		appointments = new HashSet<Appointment>();
 		this.guid = UUID.randomUUID().toString();
 	}
 	
+	
+	
+	
+	@JsonProperty
 	public String getSex() {
 		return sex;
 	}
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
+	
+	@JsonProperty
 	public String getSurname() {
 		return surname;
 	}
 	public void setSurname(String surname) {
 		this.surname = surname;
 	}
+	
+	@JsonProperty
 	public String getForename() {
 		return forename;
 	}
 	public void setForename(String forename) {
 		this.forename = forename;
 	}
+	
+	@JsonProperty
 	public String getOtherNames() {
 		return otherNames;
 	}
+	
 	public void setOtherNames(String otherNames) {
 		this.otherNames = otherNames;
 	}
+	
+	
+	@JsonProperty
 	public String getTitle() {
 		return Title;
 	}
 	public void setTitle(String title) {
 		Title = title;
 	}
+	
+	
+	@JsonProperty
 	public Date getDob() {
 		return dob;
 	}
@@ -90,7 +138,8 @@ public class Person {
 		this.dob = dob;
 	}
 	
-	
+	@JsonApiToMany
+	@JsonProperty
 	@OneToMany(mappedBy = "person", cascade=CascadeType.ALL,orphanRemoval=true)
 	public Set<PersonIdentifier> getIdentifiers() {
 		return identifiers;
@@ -100,6 +149,8 @@ public class Person {
 		this.identifiers = identifiers;
 	}
 	
+	@JsonApiToMany
+	@JsonProperty
 	@OneToMany(mappedBy = "person", cascade=CascadeType.ALL,orphanRemoval=true)
 	public Set<PersonContactDetail> getContacts() {
 		return contacts;
@@ -109,7 +160,8 @@ public class Person {
 		this.contacts = contacts;
 	}
 	
-	
+	@JsonApiToMany
+	@JsonProperty
 	@OneToMany(mappedBy = "person", cascade=CascadeType.ALL,orphanRemoval=true)
 	public Set<PersonAddress> getAddresses() {
 		return addresses;
@@ -121,7 +173,7 @@ public class Person {
 	
 	
 	
-	
+	@JsonApiId
 	@Column(nullable = false)
 	public String getGuid() {
 		return guid;

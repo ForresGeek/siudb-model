@@ -15,6 +15,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import io.katharsis.resource.annotations.JsonApiResource;
+
 /**
  * @author lee
  * 

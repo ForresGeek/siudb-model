@@ -19,6 +19,7 @@
   	<log4j.version>1.2.17</log4j.version>
   	<spring.version>4.2.5.RELEASE</spring.version>
   	<hibernate.core.version>4.3.11.Final</hibernate.core.version>
+  <katharsis.version>2.4.0</katharsis.version>
   </properties>
   
   
@@ -119,10 +120,13 @@
 
         
         <dependency>
-            <groupId>org.hibernate.javax.persistence</groupId>
-            <artifactId>hibernate-jpa-2.0-api</artifactId>
-            <version>1.0.1.Final</version>
-        </dependency>
+		    <groupId>org.hibernate.javax.persistence</groupId>
+    		<artifactId>hibernate-jpa-2.1-api</artifactId>
+    		<version>1.0.0.Final</version>
+		</dependency>
+
+        
+        
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
@@ -144,16 +148,36 @@
             <artifactId>jboss-logging</artifactId>
             <version>3.1.0.CR2</version>
         </dependency>
-        <!-- 
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>${slf4j.version}</version>
+        
+         <dependency>
+            <groupId>io.katharsis</groupId>
+            <artifactId>katharsis-rs</artifactId>
+            <version>${katharsis.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-databind</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-annotations</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
- 	-->
  
-    
-    
+ 
+ <!-- http://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-annotations</artifactId>
+    <version>2.5.4</version>
+</dependency>
+ 
+ 
     
     
   </dependencies>

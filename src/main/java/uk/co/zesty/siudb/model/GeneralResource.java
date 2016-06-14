@@ -8,6 +8,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import io.katharsis.resource.annotations.JsonApiResource;
+
 /*
  * Loosely - a wrapper for AIG segment.
  * 
@@ -136,7 +140,7 @@ public class GeneralResource {
 		this.durationUnits = durationUnits;
 	}
 
-
+	@JsonIgnore
 	@ManyToOne(optional = false)
 	@JoinColumn(name="ApptId")
 	public Appointment getAppointment() {

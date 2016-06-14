@@ -6,10 +6,15 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import io.katharsis.resource.annotations.JsonApiResource;
+
 /*
  * 
  *  Class used to serialize Cerner ZBX segments... Not sure that we'll need them..
  */
+
 
 @Entity
 public class ZBX {
@@ -28,7 +33,7 @@ public class ZBX {
 		private String  noteType;	//ZBX-3
 		private Appointment appointment;
 		
-		
+		@JsonIgnore
 		@ManyToOne(optional = true)
 		@JoinColumn(name="ApptId")
 		public Appointment getAppointment() {

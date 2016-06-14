@@ -11,6 +11,11 @@ import javax.persistence.OneToOne;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import io.katharsis.resource.annotations.JsonApiResource;
+
+
 @Entity
 public class LocationResource {
 	
@@ -53,7 +58,7 @@ AIL-12: Filler Status Code (CE) optional
 
 
 
-
+	@JsonIgnore
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="ApptId")
 	public Appointment getAppointment() {

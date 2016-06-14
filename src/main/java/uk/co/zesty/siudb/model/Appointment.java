@@ -21,6 +21,14 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.transaction.Transactional;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import io.katharsis.resource.annotations.JsonApiId;
+import io.katharsis.resource.annotations.JsonApiLookupIncludeAutomatically;
+import io.katharsis.resource.annotations.JsonApiResource;
+import io.katharsis.resource.annotations.JsonApiToMany;
+import io.katharsis.resource.annotations.JsonApiToOne;
+
 
 
 
@@ -36,6 +44,7 @@ import javax.transaction.Transactional;
 		uniqueConstraints={@UniqueConstraint(columnNames = {"eventid"})},
 	    indexes = { @Index(columnList="eventid"),@Index(columnList="guid") }
 		) 
+@JsonApiResource(type = "appointment")
 public class Appointment {
 
 	
@@ -57,9 +66,11 @@ public class Appointment {
 	private String apptDuration;		//SCH-9
 	private Integer apptDurationMinutes;	//SCH-11.3
 	private String durationUnits;		//SCH-10
+	
 	private LocationResource locationResource;
+	
 	private String enteredBy;			//SCH-20
-	private String parentPlacerAptId;	//SCH-23
+	private String parentPlacerApptId;	//SCH-23
 	private String parentFillerApptId; //SCH-24
 	private String status;				//SCH-25
 
@@ -97,6 +108,7 @@ public class Appointment {
 		this.id = id;
 	}
 
+	@JsonProperty
 	public String getEventId() {
 		return eventId;
 	}
@@ -106,6 +118,7 @@ public class Appointment {
 		this.eventId = eventId;
 	}
 
+	@JsonProperty
 	public Date getApptStart() {
 		return apptStart;
 	}
@@ -114,6 +127,8 @@ public class Appointment {
 		this.apptStart = apptStart;
 	}
 
+	
+	@JsonProperty
 	public Date getApptEnd() {
 		return apptEnd;
 	}
@@ -122,6 +137,7 @@ public class Appointment {
 		this.apptEnd = apptEnd;
 	}
 
+	@JsonProperty
 	public String getApptDuration() {
 		return apptDuration;
 	}
@@ -130,7 +146,7 @@ public class Appointment {
 		this.apptDuration = apptDuration;
 	}
 
-	
+	@JsonProperty
 	public String getStatus() {
 		return status;
 	}
@@ -140,6 +156,8 @@ public class Appointment {
 	}
 
 	//Many appointments for one person
+	@JsonApiToOne
+	@JsonApiLookupIncludeAutomatically
 	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="PersonId")
 	public Person getPerson() {
@@ -150,6 +168,8 @@ public class Appointment {
 		this.person = person;
 	}
 
+	
+	@JsonProperty
 	public String getFillerId() {
 		return fillerId;
 	}
@@ -158,6 +178,8 @@ public class Appointment {
 		this.fillerId = fillerId;
 	}
 
+	
+	@JsonProperty
 	public String getOccurence() {
 		return occurence;
 	}
@@ -166,6 +188,7 @@ public class Appointment {
 		this.occurence = occurence;
 	}
 
+	@JsonProperty
 	public String getEventReason() {
 		return eventReason;
 	}
@@ -174,6 +197,8 @@ public class Appointment {
 		this.eventReason = eventReason;
 	}
 
+	
+	@JsonProperty
 	public String getAppointmentReason() {
 		return appointmentReason;
 	}
@@ -182,6 +207,8 @@ public class Appointment {
 		this.appointmentReason = appointmentReason;
 	}
 
+	
+	@JsonProperty
 	public String getApptType() {
 		return apptType;
 	}
@@ -190,6 +217,7 @@ public class Appointment {
 		this.apptType = apptType;
 	}
 
+	@JsonProperty
 	public Integer getApptDurationMinutes() {
 		return apptDurationMinutes;
 	}
@@ -198,6 +226,7 @@ public class Appointment {
 		this.apptDurationMinutes = apptDurationMinutes;
 	}
 
+	@JsonProperty
 	public String getDurationUnits() {
 		return durationUnits;
 	}
@@ -206,6 +235,8 @@ public class Appointment {
 		this.durationUnits = durationUnits;
 	}
 
+	
+	@JsonProperty
 	public String getEnteredBy() {
 		return enteredBy;
 	}
@@ -214,14 +245,17 @@ public class Appointment {
 		this.enteredBy = enteredBy;
 	}
 
+	
+	@JsonProperty
 	public String getParentPlacerAptId() {
-		return parentPlacerAptId;
+		return parentPlacerApptId;
 	}
 
 	public void setParentPlacerAptId(String parentPlacerAptId) {
-		this.parentPlacerAptId = parentPlacerAptId;
+		this.parentPlacerApptId = parentPlacerAptId;
 	}
 
+	@JsonProperty
 	public String getParentFillerApptId() {
 		return parentFillerApptId;
 	}
@@ -232,6 +266,7 @@ public class Appointment {
 	
 	
 	@Column(nullable = false)
+	@JsonApiId
 	public String getGuid() {
 		return guid;
 	}
@@ -245,7 +280,7 @@ public class Appointment {
 
 	
 
-	
+	@JsonApiToMany
 	@OneToMany(mappedBy = "appointment", cascade=CascadeType.ALL,orphanRemoval=true)
 	public Set<SchedulingNote> getSchedulingNotes() {
 		return schedulingNotes;
@@ -274,7 +309,7 @@ public class Appointment {
 		result = prime * result + ((locationResource == null) ? 0 : locationResource.hashCode());
 		result = prime * result + ((occurence == null) ? 0 : occurence.hashCode());
 		result = prime * result + ((parentFillerApptId == null) ? 0 : parentFillerApptId.hashCode());
-		result = prime * result + ((parentPlacerAptId == null) ? 0 : parentPlacerAptId.hashCode());
+		result = prime * result + ((parentPlacerApptId == null) ? 0 : parentPlacerApptId.hashCode());
 		result = prime * result + ((person == null) ? 0 : person.hashCode());
 		result = prime * result + ((schedulingNotes == null) ? 0 : schedulingNotes.hashCode());
 		result = prime * result + ((status == null) ? 0 : status.hashCode());
@@ -365,10 +400,10 @@ public class Appointment {
 				return false;
 		} else if (!parentFillerApptId.equals(other.parentFillerApptId))
 			return false;
-		if (parentPlacerAptId == null) {
-			if (other.parentPlacerAptId != null)
+		if (parentPlacerApptId == null) {
+			if (other.parentPlacerApptId != null)
 				return false;
-		} else if (!parentPlacerAptId.equals(other.parentPlacerAptId))
+		} else if (!parentPlacerApptId.equals(other.parentPlacerApptId))
 			return false;
 		if (person == null) {
 			if (other.person != null)
@@ -398,7 +433,7 @@ public class Appointment {
 				.append(", apptStart=").append(apptStart).append(", apptEnd=").append(apptEnd).append(", apptDuration=")
 				.append(apptDuration).append(", apptDurationMinutes=").append(apptDurationMinutes)
 				.append(", durationUnits=").append(durationUnits).append(", location=").append(locationResource)
-				.append(", enteredBy=").append(enteredBy).append(", parentPlacerAptId=").append(parentPlacerAptId)
+				.append(", enteredBy=").append(enteredBy).append(", parentPlacerAptId=").append(parentPlacerApptId)
 				.append(", parentFillerApptId=").append(parentFillerApptId).append(", status=").append(status)
 				.append(", schedulingNotes=").append(schedulingNotes != null ? toString(schedulingNotes, maxLen) : null)
 				.append(", visit=").append(visit).append("]");
@@ -420,7 +455,7 @@ public class Appointment {
 
 
 	
-
+	@JsonProperty
 	@OneToOne(mappedBy = "appointment", cascade=CascadeType.ALL)
 	@JoinColumn(name="PVisitId")
 	public PatientVisit getVisit() {
@@ -431,19 +466,9 @@ public class Appointment {
 		this.visit = visit;
 	}
 
-	/*
-	@OneToOne(mappedBy = "appointment", cascade=CascadeType.ALL)
-	@JoinColumn(name="LocationId")
-	public LocationResource getLocation() {
-		return locationResource;
-	}
-
-	public void setLocation(LocationResource locationResource) {
-		this.locationResource = locationResource;
-	}
-	 */
+		
 	
-	
+	@JsonApiToMany
 	@OneToMany(mappedBy = "appointment", cascade=CascadeType.ALL,orphanRemoval=true)
 	public Set<PersonnelResource> getPersonnelResources() {
 		return personnelResources;
@@ -453,6 +478,9 @@ public class Appointment {
 		this.personnelResources = personnelResources;
 	}
 
+	
+	
+	@JsonApiToMany
 	@OneToMany(mappedBy = "appointment", cascade=CascadeType.ALL,orphanRemoval=true)
 	public Set<GeneralResource> getGeneralResources() {
 		return generalResources;
@@ -463,6 +491,7 @@ public class Appointment {
 	}
 
 
+	@JsonProperty
 	@OneToOne(mappedBy = "appointment", cascade=CascadeType.ALL)
 	@JoinColumn(name="LocationId")
 	public LocationResource getLocationResource() {
@@ -475,6 +504,7 @@ public class Appointment {
 	}
 
 	
+	@JsonApiToMany
 	@OneToMany(mappedBy = "appointment", cascade=CascadeType.ALL,orphanRemoval=true)
 	public Set<ZBX> getZbxList() {
 		return zbxList;

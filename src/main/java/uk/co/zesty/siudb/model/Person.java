@@ -20,6 +20,7 @@ import javax.persistence.UniqueConstraint;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.katharsis.resource.annotations.JsonApiId;
+import io.katharsis.resource.annotations.JsonApiIncludeByDefault;
 import io.katharsis.resource.annotations.JsonApiResource;
 import io.katharsis.resource.annotations.JsonApiToMany;
 
@@ -138,8 +139,8 @@ public class Person {
 		this.dob = dob;
 	}
 	
-	@JsonApiToMany
-	@JsonProperty
+	@JsonProperty()
+	@JsonApiIncludeByDefault
 	@OneToMany(mappedBy = "person", cascade=CascadeType.ALL,orphanRemoval=true)
 	public Set<PersonIdentifier> getIdentifiers() {
 		return identifiers;
@@ -149,8 +150,9 @@ public class Person {
 		this.identifiers = identifiers;
 	}
 	
-	@JsonApiToMany
+	@JsonApiToMany(lazy=false)
 	@JsonProperty
+	@JsonApiIncludeByDefault
 	@OneToMany(mappedBy = "person", cascade=CascadeType.ALL,orphanRemoval=true)
 	public Set<PersonContactDetail> getContacts() {
 		return contacts;

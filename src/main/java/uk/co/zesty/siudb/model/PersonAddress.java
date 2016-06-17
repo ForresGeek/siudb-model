@@ -8,7 +8,11 @@ import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import io.katharsis.resource.annotations.JsonApiId;
+import io.katharsis.resource.annotations.JsonApiResource;
+
 @Entity
+@JsonApiResource(type = "personaddress")
 public class PersonAddress {
 
 	//Definiton based on HL7v2.3 XAD structure.
@@ -44,6 +48,7 @@ public class PersonAddress {
 	}
 
 
+	@JsonApiId
 	@Id
 	@GeneratedValue
 	public Long getId() {

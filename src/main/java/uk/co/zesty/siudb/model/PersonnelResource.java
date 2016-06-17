@@ -10,9 +10,11 @@ import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import io.katharsis.resource.annotations.JsonApiId;
 import io.katharsis.resource.annotations.JsonApiResource;
 
 @Entity
+@JsonApiResource(type = "personnelresource")
 public class PersonnelResource {
 
 	
@@ -50,7 +52,7 @@ public class PersonnelResource {
 
 
 
-
+	@JsonApiId
 	@Id
 	@GeneratedValue
 	public Long getId() {

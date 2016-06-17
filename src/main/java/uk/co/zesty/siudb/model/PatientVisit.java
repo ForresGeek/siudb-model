@@ -13,9 +13,11 @@ import org.hibernate.annotations.Parameter;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import io.katharsis.resource.annotations.JsonApiId;
 import io.katharsis.resource.annotations.JsonApiResource;
 
 @Entity
+@JsonApiResource(type = "patientvisit")
 public class PatientVisit {
 
 	/*
@@ -64,6 +66,7 @@ public class PatientVisit {
 	
 
 	@Id  
+	@JsonApiId
     @GeneratedValue(generator="myGenerator")  
     @GenericGenerator(name="myGenerator", strategy="foreign", parameters=@Parameter(value="appointment", name = "property")) 
 	public Long getAppointmentId() {

@@ -10,6 +10,7 @@ import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import io.katharsis.resource.annotations.JsonApiId;
 import io.katharsis.resource.annotations.JsonApiResource;
 
 /*
@@ -17,6 +18,7 @@ import io.katharsis.resource.annotations.JsonApiResource;
  * 
  */
 @Entity
+@JsonApiResource(type = "generalresource")
 public class GeneralResource {
 
 	private Long id;
@@ -41,6 +43,7 @@ public class GeneralResource {
 
 	@Id
 	@GeneratedValue
+	@JsonApiId
 	public Long getId() {
 		return id;
 	}

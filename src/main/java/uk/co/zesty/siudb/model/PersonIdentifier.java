@@ -9,6 +9,7 @@ import javax.persistence.UniqueConstraint;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import io.katharsis.resource.annotations.JsonApiId;
 import io.katharsis.resource.annotations.JsonApiResource;
 
 import javax.persistence.Id;
@@ -19,6 +20,7 @@ import javax.persistence.JoinColumn;
 //@Table(uniqueConstraints={
 //	    @UniqueConstraint(columnNames = {"identifier", "identifiertype","identifierassigningauthority"})
 //	}) 
+@JsonApiResource(type = "personidentifier")
 public class PersonIdentifier {
 
 
@@ -76,6 +78,7 @@ public class PersonIdentifier {
 
 	
 	
+	@JsonApiId
 	@Id
 	@GeneratedValue
 	public Long getId() {

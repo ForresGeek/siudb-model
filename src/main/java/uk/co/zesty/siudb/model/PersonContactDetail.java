@@ -8,6 +8,7 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import io.katharsis.resource.annotations.JsonApiId;
 import io.katharsis.resource.annotations.JsonApiResource;
 
 import javax.persistence.Id;
@@ -16,6 +17,7 @@ import javax.persistence.JoinColumn;
 
 @Entity
 @Table(name="personContactDetails")
+@JsonApiResource(type = "personcontactdetail")
 public class PersonContactDetail {
 	
 	
@@ -46,6 +48,8 @@ public class PersonContactDetail {
 		this.contactUse = contactUse;
 	}
 	
+	
+	@JsonApiId
 	@GeneratedValue
 	@Id
 	public Long getId() {

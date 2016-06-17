@@ -9,11 +9,13 @@ import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import io.katharsis.resource.annotations.JsonApiId;
 import io.katharsis.resource.annotations.JsonApiResource;
 
 
 
 @Entity
+@JsonApiResource(type = "schedulingnote")
 public class SchedulingNote {
 	
 	/* Class to hold NTE segments from Cerner Scheduling messages */
@@ -49,6 +51,8 @@ public class SchedulingNote {
 		this.note = note;
 	}
 	
+	
+	@JsonApiId
 	@Id
 	@GeneratedValue
 	public Long getId() {

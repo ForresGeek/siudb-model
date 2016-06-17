@@ -13,10 +13,12 @@ import org.hibernate.annotations.Parameter;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import io.katharsis.resource.annotations.JsonApiId;
 import io.katharsis.resource.annotations.JsonApiResource;
 
 
 @Entity
+@JsonApiResource(type = "locationresource")
 public class LocationResource {
 	
 	
@@ -200,6 +202,7 @@ AIL-12: Filler Status Code (CE) optional
 	@Id  
     @GeneratedValue(generator="myGenerator")  
     @GenericGenerator(name="myGenerator", strategy="foreign", parameters=@Parameter(value="appointment", name = "property")) 
+	@JsonApiId
 	public Long getAppointmentId() {
 		return appointmentId;
 	}

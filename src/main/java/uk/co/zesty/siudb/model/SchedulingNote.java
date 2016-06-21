@@ -8,6 +8,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.katharsis.resource.annotations.JsonApiId;
 import io.katharsis.resource.annotations.JsonApiResource;
@@ -30,12 +31,15 @@ public class SchedulingNote {
 	//Linked to appointment
 	private Appointment appointment;
 	
+	@JsonProperty
 	public Integer getSetId() {
 		return setId;
 	}
 	public void setSetId(Integer setId) {
 		this.setId = setId;
 	}
+	
+	@JsonProperty
 	public String getNoteType() {
 		return noteType;
 	}
@@ -43,6 +47,7 @@ public class SchedulingNote {
 		this.noteType = noteType;
 	}
 	
+	@JsonProperty
 	@Column(columnDefinition="TEXT")
 	public String getNote() {
 		return note;

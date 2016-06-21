@@ -9,6 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.katharsis.resource.annotations.JsonApiId;
 import io.katharsis.resource.annotations.JsonApiResource;
@@ -49,11 +50,13 @@ public class GeneralResource {
 	}
 
 
+	
+	
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-
+	@JsonProperty
 	public Integer getSetId() {
 		return setId;
 	}
@@ -63,7 +66,7 @@ public class GeneralResource {
 		this.setId = setId;
 	}
 
-
+	@JsonProperty
 	public String getSegmentActionCode() {
 		return segmentActionCode;
 	}
@@ -73,7 +76,7 @@ public class GeneralResource {
 		this.segmentActionCode = segmentActionCode;
 	}
 
-
+	@JsonProperty
 	public String getResourceId() {
 		return resourceId;
 	}
@@ -83,7 +86,7 @@ public class GeneralResource {
 		this.resourceId = resourceId;
 	}
 
-
+	@JsonProperty
 	public String getResourceType() {
 		return resourceType;
 	}
@@ -93,7 +96,7 @@ public class GeneralResource {
 		this.resourceType = resourceType;
 	}
 
-
+	@JsonProperty
 	public Date getStartTime() {
 		return startTime;
 	}
@@ -103,7 +106,7 @@ public class GeneralResource {
 		this.startTime = startTime;
 	}
 
-
+	@JsonProperty
 	public Integer getTimeOffset() {
 		return timeOffset;
 	}
@@ -113,7 +116,7 @@ public class GeneralResource {
 		this.timeOffset = timeOffset;
 	}
 
-
+	@JsonProperty
 	public String getTimeOffsetUnits() {
 		return timeOffsetUnits;
 	}
@@ -123,7 +126,7 @@ public class GeneralResource {
 		this.timeOffsetUnits = timeOffsetUnits;
 	}
 
-
+	@JsonProperty
 	public Integer getDuration() {
 		return duration;
 	}
@@ -133,7 +136,7 @@ public class GeneralResource {
 		this.duration = duration;
 	}
 
-
+	@JsonProperty
 	public String getDurationUnits() {
 		return durationUnits;
 	}

@@ -7,6 +7,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.katharsis.resource.annotations.JsonApiId;
 import io.katharsis.resource.annotations.JsonApiResource;
@@ -61,6 +62,7 @@ public class PersonAddress {
 	}
 
 
+	@JsonProperty
 	public String getStreetAddress() {
 		return streetAddress;
 	}
@@ -70,7 +72,7 @@ public class PersonAddress {
 		this.streetAddress = streetAddress;
 	}
 
-
+	@JsonProperty
 	public String getOtherDesignation() {
 		return otherDesignation;
 	}
@@ -80,7 +82,7 @@ public class PersonAddress {
 		this.otherDesignation = otherDesignation;
 	}
 
-
+	@JsonProperty
 	public String getCity() {
 		return city;
 	}
@@ -90,7 +92,7 @@ public class PersonAddress {
 		this.city = city;
 	}
 
-
+	@JsonProperty
 	public String getStateOrProvince() {
 		return stateOrProvince;
 	}
@@ -100,7 +102,7 @@ public class PersonAddress {
 		this.stateOrProvince = stateOrProvince;
 	}
 
-
+	@JsonProperty
 	public String getZipOrPostCode() {
 		return zipOrPostCode;
 	}
@@ -110,7 +112,7 @@ public class PersonAddress {
 		this.zipOrPostCode = zipOrPostCode;
 	}
 
-
+	@JsonProperty
 	public String getAddressType() {
 		return addressType;
 	}
@@ -120,7 +122,7 @@ public class PersonAddress {
 		this.addressType = addressType;
 	}
 
-
+	@JsonProperty
 	public String getOtherGeographicDesignation() {
 		return otherGeographicDesignation;
 	}
@@ -130,7 +132,7 @@ public class PersonAddress {
 		this.otherGeographicDesignation = otherGeographicDesignation;
 	}
 
-
+	@JsonProperty
 	public String getCounty() {
 		return County;
 	}
@@ -140,7 +142,7 @@ public class PersonAddress {
 		County = county;
 	}
 
-
+	@JsonProperty
 	public String getCensusTract() {
 		return censusTract;
 	}

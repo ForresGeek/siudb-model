@@ -15,6 +15,9 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import io.katharsis.resource.annotations.JsonApiId;
 import io.katharsis.resource.annotations.JsonApiResource;
 
 /**
@@ -70,6 +73,7 @@ public class RawMessage implements Serializable {
 	@Column(name="statusMessage")
 	private String statusMessage;
 
+	@JsonApiId
 	public Long getId() {
 		return id;
 	}
@@ -78,6 +82,7 @@ public class RawMessage implements Serializable {
 		this.id = id;
 	}
 
+	@JsonProperty
 	public String getRawText() {
 		return rawText;
 	}
@@ -86,6 +91,7 @@ public class RawMessage implements Serializable {
 		this.rawText = rawText;
 	}
 
+	@JsonProperty
 	public String getMsgId() {
 		return msgId;
 	}
@@ -94,6 +100,7 @@ public class RawMessage implements Serializable {
 		this.msgId = msgId;
 	}
 
+	@JsonProperty
 	public String getMsgType() {
 		return msgType;
 	}
@@ -102,6 +109,7 @@ public class RawMessage implements Serializable {
 		this.msgType = msgType;
 	}
 
+	@JsonProperty
 	public Date getDtmReceived() {
 		return dtmReceived;
 	}
@@ -110,6 +118,7 @@ public class RawMessage implements Serializable {
 		this.dtmReceived = dtmReceived;
 	}
 
+	@JsonProperty
 	public Boolean getProcessedFlag() {
 		return processedFlag;
 	}
@@ -118,6 +127,8 @@ public class RawMessage implements Serializable {
 		this.processedFlag = processedFlag;
 	}
 
+	
+	@JsonProperty
 	public String getProcessedStatus() {
 		return processedStatus;
 	}
@@ -126,6 +137,8 @@ public class RawMessage implements Serializable {
 		this.processedStatus = processedStatus;
 	}
 
+	
+	@JsonProperty
 	public Date getDtmProcessed() {
 		return dtmProcessed;
 	}
@@ -134,6 +147,9 @@ public class RawMessage implements Serializable {
 		this.dtmProcessed = dtmProcessed;
 	}
 
+	
+	
+	@JsonProperty
 	public String getStatusMessage() {
 		return statusMessage;
 	}

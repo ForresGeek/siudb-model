@@ -50,9 +50,7 @@ public class Person {
 		
 	private Set <PersonIdentifier> identifiers;
 	private Set <PersonContactDetail> contacts;
-	private Set <PersonAddress> addresses;
-	
-	
+	private Set <PersonAddress> addresses;	
 	private Set <Appointment> appointments;
 	
 	
@@ -141,6 +139,7 @@ public class Person {
 	
 	@JsonProperty()
 	@JsonApiIncludeByDefault
+	@JsonApiToMany(lazy=false)
 	@OneToMany(mappedBy = "person", cascade=CascadeType.ALL,orphanRemoval=true)
 	public Set<PersonIdentifier> getIdentifiers() {
 		return identifiers;

@@ -12,6 +12,7 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.katharsis.resource.annotations.JsonApiId;
 import io.katharsis.resource.annotations.JsonApiResource;
@@ -38,13 +39,15 @@ public class PatientVisit {
 	private Long appointmentId;
 	
 	
-	
+	@JsonProperty
 	public String getVisitId() {
 		return visitId;
 	}
 	public void setVisitId(String visitId) {
 		this.visitId = visitId;
 	}
+	
+	@JsonProperty
 	public String getSpecialty() {
 		return specialty;
 	}

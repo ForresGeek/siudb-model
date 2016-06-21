@@ -7,6 +7,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.katharsis.resource.annotations.JsonApiId;
 import io.katharsis.resource.annotations.JsonApiResource;
@@ -29,18 +30,23 @@ public class PersonContactDetail {
 	private String contactType;			//e.g. EMAIL
 	private String contactUse;			//e.g. HOME
 	
+	@JsonProperty
 	public String getContactDetail() {
 		return contactDetail;
 	}
 	public void setContactDetail(String contactDetail) {
 		this.contactDetail = contactDetail;
 	}
+	
+	@JsonProperty
 	public String getContactType() {
 		return contactType;
 	}
 	public void setContactType(String contactType) {
 		this.contactType = contactType;
 	}
+	
+	@JsonProperty
 	public String getContactUse() {
 		return contactUse;
 	}

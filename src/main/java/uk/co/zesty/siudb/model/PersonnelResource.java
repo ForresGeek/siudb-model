@@ -9,6 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.katharsis.resource.annotations.JsonApiId;
 import io.katharsis.resource.annotations.JsonApiResource;
@@ -70,7 +71,7 @@ public class PersonnelResource {
 
 
 
-
+	@JsonProperty
 	public Integer getSetId() {
 		return setId;
 	}
@@ -86,7 +87,7 @@ public class PersonnelResource {
 
 
 
-
+	@JsonProperty
 	public String getPersonnelId() {
 		return personnelId;
 	}
@@ -102,7 +103,7 @@ public class PersonnelResource {
 
 
 
-
+	@JsonProperty
 	public String getPersonnelIdType() {
 		return personnelIdType;
 	}
@@ -118,7 +119,7 @@ public class PersonnelResource {
 
 
 
-
+	@JsonProperty
 	public String getPersonnelGivenName() {
 		return personnelGivenName;
 	}
@@ -134,7 +135,7 @@ public class PersonnelResource {
 
 
 
-
+	@JsonProperty
 	public String getPersonnelFamilyName() {
 		return personnelFamilyName;
 	}
@@ -150,7 +151,7 @@ public class PersonnelResource {
 
 
 
-
+	@JsonProperty
 	public String getPersonnelPrefix() {
 		return personnelPrefix;
 	}
@@ -166,7 +167,7 @@ public class PersonnelResource {
 
 
 
-
+	@JsonProperty
 	public String getPersonnelResourceRole() {
 		return personnelResourceRole;
 	}
@@ -182,7 +183,7 @@ public class PersonnelResource {
 
 
 
-
+	@JsonProperty
 	public String getPersonnelResourceGroup() {
 		return personnelResourceGroup;
 	}
@@ -198,7 +199,7 @@ public class PersonnelResource {
 
 
 
-
+	@JsonProperty
 	public Date getStartDate() {
 		return startDate;
 	}
@@ -214,7 +215,7 @@ public class PersonnelResource {
 
 
 
-
+	@JsonProperty
 	public Integer getTimeOffset() {
 		return timeOffset;
 	}
@@ -230,7 +231,7 @@ public class PersonnelResource {
 
 
 
-
+	@JsonProperty
 	public String getTimeOffsetUnits() {
 		return timeOffsetUnits;
 	}
@@ -246,7 +247,7 @@ public class PersonnelResource {
 
 
 
-
+	@JsonProperty
 	public Integer getDuration() {
 		return duration;
 	}
@@ -262,7 +263,7 @@ public class PersonnelResource {
 
 
 
-
+	@JsonProperty
 	public String getDurationUnits() {
 		return durationUnits;
 	}
@@ -278,7 +279,7 @@ public class PersonnelResource {
 
 
 
-
+	@JsonProperty
 	public String getAllowSubstitution() {
 		return allowSubstitution;
 	}
@@ -294,7 +295,7 @@ public class PersonnelResource {
 
 
 
-
+	@JsonProperty
 	public String getFillerStatusCode() {
 		return fillerStatusCode;
 	}

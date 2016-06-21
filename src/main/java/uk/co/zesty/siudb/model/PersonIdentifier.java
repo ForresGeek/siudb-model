@@ -8,6 +8,7 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.katharsis.resource.annotations.JsonApiId;
 import io.katharsis.resource.annotations.JsonApiResource;
@@ -34,6 +35,7 @@ public class PersonIdentifier {
 	private Person person;
 
 
+	@JsonProperty
 	public String getIdentifierType() {
 		return identifierType;
 	}
@@ -43,7 +45,7 @@ public class PersonIdentifier {
 		this.identifierType = identifierType;
 	}
 
-
+	@JsonProperty
 	public String getIdentifier() {
 		return identifier;
 	}
@@ -53,7 +55,7 @@ public class PersonIdentifier {
 		this.identifier = identifier;
 	}
 
-
+	@JsonProperty
 	public String getIdentifierAssigningAuthority() {
 		return identifierAssigningAuthority;
 	}

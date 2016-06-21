@@ -12,6 +12,7 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.katharsis.resource.annotations.JsonApiId;
 import io.katharsis.resource.annotations.JsonApiResource;
@@ -72,7 +73,7 @@ AIL-12: Filler Status Code (CE) optional
 		this.appointment = appointment;
 	}
 
-
+	@JsonProperty
 	public Integer getSetId() {
 		return setId;
 	}
@@ -82,7 +83,7 @@ AIL-12: Filler Status Code (CE) optional
 		this.setId = setId;
 	}
 
-
+	@JsonProperty
 	public String getSegmentActionCode() {
 		return segmentActionCode;
 	}
@@ -92,7 +93,7 @@ AIL-12: Filler Status Code (CE) optional
 		this.segmentActionCode = segmentActionCode;
 	}
 
-
+	@JsonProperty
 	public String getLocationType() {
 		return locationType;
 	}
@@ -102,7 +103,7 @@ AIL-12: Filler Status Code (CE) optional
 		this.locationType = locationType;
 	}
 
-
+	@JsonProperty
 	public String getLocationGroup() {
 		return locationGroup;
 	}
@@ -124,7 +125,7 @@ AIL-12: Filler Status Code (CE) optional
 		return builder.toString();
 	}
 
-
+	@JsonProperty
 	public String getPointOfCare() {
 		return pointOfCare;
 	}
@@ -134,7 +135,7 @@ AIL-12: Filler Status Code (CE) optional
 		this.pointOfCare = pointOfCare;
 	}
 
-
+	@JsonProperty
 	public String getFacility() {
 		return facility;
 	}
@@ -144,7 +145,7 @@ AIL-12: Filler Status Code (CE) optional
 		this.facility = facility;
 	}
 
-
+	@JsonProperty
 	public String getBuilding() {
 		return building;
 	}
@@ -154,7 +155,7 @@ AIL-12: Filler Status Code (CE) optional
 		this.building = building;
 	}
 
-
+	@JsonProperty
 	public String getBed() {
 		return bed;
 	}
@@ -164,7 +165,7 @@ AIL-12: Filler Status Code (CE) optional
 		this.bed = bed;
 	}
 
-
+	@JsonProperty
 	public String getFloor() {
 		return floor;
 	}
@@ -174,7 +175,7 @@ AIL-12: Filler Status Code (CE) optional
 		this.floor = floor;
 	}
 
-
+	@JsonProperty
 	public String getRoom() {
 		return room;
 	}

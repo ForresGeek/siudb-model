@@ -21,6 +21,7 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.transaction.Transactional;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.katharsis.resource.annotations.JsonApiId;
@@ -503,7 +504,7 @@ public class Appointment {
 		this.locationResource = locationResource;
 	}
 
-	@JsonProperty("zbx-list")
+	@JsonIgnore
 	@JsonApiToMany
 	@OneToMany(mappedBy = "appointment", cascade=CascadeType.ALL,orphanRemoval=true)
 	public Set<ZBX> getZbxList() {

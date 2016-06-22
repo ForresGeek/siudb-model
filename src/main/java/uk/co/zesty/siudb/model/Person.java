@@ -110,7 +110,7 @@ public class Person {
 		this.forename = forename;
 	}
 	
-	@JsonProperty
+	@JsonProperty("other-names")
 	public String getOtherNames() {
 		return otherNames;
 	}

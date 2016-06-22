@@ -108,7 +108,7 @@ public class Appointment {
 		this.id = id;
 	}
 
-	@JsonProperty
+	@JsonProperty("event-id")
 	public String getEventId() {
 		return eventId;
 	}
@@ -118,7 +118,7 @@ public class Appointment {
 		this.eventId = eventId;
 	}
 
-	@JsonProperty
+	@JsonProperty("appt-start")
 	public Date getApptStart() {
 		return apptStart;
 	}
@@ -128,7 +128,7 @@ public class Appointment {
 	}
 
 	
-	@JsonProperty
+	@JsonProperty("appt-end")
 	public Date getApptEnd() {
 		return apptEnd;
 	}
@@ -137,7 +137,7 @@ public class Appointment {
 		this.apptEnd = apptEnd;
 	}
 
-	@JsonProperty
+	@JsonProperty("appt-duration")
 	public String getApptDuration() {
 		return apptDuration;
 	}
@@ -146,7 +146,7 @@ public class Appointment {
 		this.apptDuration = apptDuration;
 	}
 
-	@JsonProperty
+	@JsonProperty("status")
 	public String getStatus() {
 		return status;
 	}
@@ -169,7 +169,7 @@ public class Appointment {
 	}
 
 	
-	@JsonProperty
+	@JsonProperty("filler-id")
 	public String getFillerId() {
 		return fillerId;
 	}
@@ -179,7 +179,7 @@ public class Appointment {
 	}
 
 	
-	@JsonProperty
+	@JsonProperty("occurence")
 	public String getOccurence() {
 		return occurence;
 	}
@@ -188,7 +188,7 @@ public class Appointment {
 		this.occurence = occurence;
 	}
 
-	@JsonProperty
+	@JsonProperty("event-reason")
 	public String getEventReason() {
 		return eventReason;
 	}
@@ -198,7 +198,7 @@ public class Appointment {
 	}
 
 	
-	@JsonProperty
+	@JsonProperty("appointment-reason")
 	public String getAppointmentReason() {
 		return appointmentReason;
 	}
@@ -208,7 +208,7 @@ public class Appointment {
 	}
 
 	
-	@JsonProperty
+	@JsonProperty("appt-type")
 	public String getApptType() {
 		return apptType;
 	}
@@ -217,7 +217,7 @@ public class Appointment {
 		this.apptType = apptType;
 	}
 
-	@JsonProperty
+	@JsonProperty("appt-duration-minutes")
 	public Integer getApptDurationMinutes() {
 		return apptDurationMinutes;
 	}
@@ -226,7 +226,7 @@ public class Appointment {
 		this.apptDurationMinutes = apptDurationMinutes;
 	}
 
-	@JsonProperty
+	@JsonProperty("duration-units")
 	public String getDurationUnits() {
 		return durationUnits;
 	}
@@ -236,7 +236,7 @@ public class Appointment {
 	}
 
 	
-	@JsonProperty
+	@JsonProperty("entered-by")
 	public String getEnteredBy() {
 		return enteredBy;
 	}
@@ -246,16 +246,16 @@ public class Appointment {
 	}
 
 	
-	@JsonProperty
-	public String getParentPlacerAptId() {
+	@JsonProperty("parent-placer-appt-id")
+	public String getParentPlacerApptId() {
 		return parentPlacerApptId;
 	}
 
-	public void setParentPlacerAptId(String parentPlacerAptId) {
+	public void setParentPlacerApptId(String parentPlacerAptId) {
 		this.parentPlacerApptId = parentPlacerAptId;
 	}
 
-	@JsonProperty
+	@JsonProperty("parent-filler-appt-id")
 	public String getParentFillerApptId() {
 		return parentFillerApptId;
 	}
@@ -279,7 +279,7 @@ public class Appointment {
 	
 
 	
-
+	@JsonProperty("scheduling-notes")
 	@JsonApiToMany
 	@OneToMany(mappedBy = "appointment", cascade=CascadeType.ALL,orphanRemoval=true)
 	public Set<SchedulingNote> getSchedulingNotes() {
@@ -455,7 +455,7 @@ public class Appointment {
 
 
 	
-	@JsonProperty
+	@JsonProperty("visit")
 	@OneToOne(mappedBy = "appointment", cascade=CascadeType.ALL)
 	@JoinColumn(name="PVisitId")
 	public PatientVisit getVisit() {
@@ -467,7 +467,7 @@ public class Appointment {
 	}
 
 		
-	
+	@JsonProperty("personnel-resources")
 	@JsonApiToMany
 	@OneToMany(mappedBy = "appointment", cascade=CascadeType.ALL,orphanRemoval=true)
 	public Set<PersonnelResource> getPersonnelResources() {
@@ -479,7 +479,7 @@ public class Appointment {
 	}
 
 	
-	
+	@JsonProperty("general-resources")
 	@JsonApiToMany
 	@OneToMany(mappedBy = "appointment", cascade=CascadeType.ALL,orphanRemoval=true)
 	public Set<GeneralResource> getGeneralResources() {
@@ -491,7 +491,7 @@ public class Appointment {
 	}
 
 
-	@JsonProperty
+	@JsonProperty("location-resource")
 	@OneToOne(mappedBy = "appointment", cascade=CascadeType.ALL)
 	@JoinColumn(name="LocationId")
 	public LocationResource getLocationResource() {
@@ -503,7 +503,7 @@ public class Appointment {
 		this.locationResource = locationResource;
 	}
 
-	
+	@JsonProperty("zbx-list")
 	@JsonApiToMany
 	@OneToMany(mappedBy = "appointment", cascade=CascadeType.ALL,orphanRemoval=true)
 	public Set<ZBX> getZbxList() {

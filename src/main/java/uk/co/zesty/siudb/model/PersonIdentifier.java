@@ -35,7 +35,7 @@ public class PersonIdentifier {
 	private Person person;
 
 
-	@JsonProperty
+	@JsonProperty("identifier-type")
 	public String getIdentifierType() {
 		return identifierType;
 	}
@@ -55,7 +55,7 @@ public class PersonIdentifier {
 		this.identifier = identifier;
 	}
 
-	@JsonProperty
+	@JsonProperty("identifier-assigning-authority")
 	public String getIdentifierAssigningAuthority() {
 		return identifierAssigningAuthority;
 	}

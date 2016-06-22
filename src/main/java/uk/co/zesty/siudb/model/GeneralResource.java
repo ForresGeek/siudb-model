@@ -56,7 +56,7 @@ public class GeneralResource {
 		this.id = id;
 	}
 
-	@JsonProperty
+	@JsonProperty("set-id")
 	public Integer getSetId() {
 		return setId;
 	}
@@ -66,7 +66,7 @@ public class GeneralResource {
 		this.setId = setId;
 	}
 
-	@JsonProperty
+	@JsonProperty("segment-action-code")
 	public String getSegmentActionCode() {
 		return segmentActionCode;
 	}
@@ -76,7 +76,7 @@ public class GeneralResource {
 		this.segmentActionCode = segmentActionCode;
 	}
 
-	@JsonProperty
+	@JsonProperty("resource-id")
 	public String getResourceId() {
 		return resourceId;
 	}
@@ -86,7 +86,7 @@ public class GeneralResource {
 		this.resourceId = resourceId;
 	}
 
-	@JsonProperty
+	@JsonProperty("resource-type")
 	public String getResourceType() {
 		return resourceType;
 	}
@@ -96,7 +96,7 @@ public class GeneralResource {
 		this.resourceType = resourceType;
 	}
 
-	@JsonProperty
+	@JsonProperty("start-time")
 	public Date getStartTime() {
 		return startTime;
 	}
@@ -106,7 +106,7 @@ public class GeneralResource {
 		this.startTime = startTime;
 	}
 
-	@JsonProperty
+	@JsonProperty("time-offset")
 	public Integer getTimeOffset() {
 		return timeOffset;
 	}
@@ -116,7 +116,7 @@ public class GeneralResource {
 		this.timeOffset = timeOffset;
 	}
 
-	@JsonProperty
+	@JsonProperty("time-offset-units")
 	public String getTimeOffsetUnits() {
 		return timeOffsetUnits;
 	}
@@ -126,7 +126,7 @@ public class GeneralResource {
 		this.timeOffsetUnits = timeOffsetUnits;
 	}
 
-	@JsonProperty
+	@JsonProperty("duration")
 	public Integer getDuration() {
 		return duration;
 	}
@@ -136,7 +136,7 @@ public class GeneralResource {
 		this.duration = duration;
 	}
 
-	@JsonProperty
+	@JsonProperty("duration-units")
 	public String getDurationUnits() {
 		return durationUnits;
 	}

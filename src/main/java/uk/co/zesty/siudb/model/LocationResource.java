@@ -73,7 +73,7 @@ AIL-12: Filler Status Code (CE) optional
 		this.appointment = appointment;
 	}
 
-	@JsonProperty
+	@JsonProperty("set-id")
 	public Integer getSetId() {
 		return setId;
 	}
@@ -83,7 +83,7 @@ AIL-12: Filler Status Code (CE) optional
 		this.setId = setId;
 	}
 
-	@JsonProperty
+	@JsonProperty("segment-action-code")
 	public String getSegmentActionCode() {
 		return segmentActionCode;
 	}
@@ -93,7 +93,7 @@ AIL-12: Filler Status Code (CE) optional
 		this.segmentActionCode = segmentActionCode;
 	}
 
-	@JsonProperty
+	@JsonProperty("location-type")
 	public String getLocationType() {
 		return locationType;
 	}
@@ -103,7 +103,7 @@ AIL-12: Filler Status Code (CE) optional
 		this.locationType = locationType;
 	}
 
-	@JsonProperty
+	@JsonProperty("location-group")
 	public String getLocationGroup() {
 		return locationGroup;
 	}
@@ -125,7 +125,7 @@ AIL-12: Filler Status Code (CE) optional
 		return builder.toString();
 	}
 
-	@JsonProperty
+	@JsonProperty("point-of-care")
 	public String getPointOfCare() {
 		return pointOfCare;
 	}
@@ -135,7 +135,7 @@ AIL-12: Filler Status Code (CE) optional
 		this.pointOfCare = pointOfCare;
 	}
 
-	@JsonProperty
+	@JsonProperty("facility")
 	public String getFacility() {
 		return facility;
 	}
@@ -145,7 +145,7 @@ AIL-12: Filler Status Code (CE) optional
 		this.facility = facility;
 	}
 
-	@JsonProperty
+	@JsonProperty("building")
 	public String getBuilding() {
 		return building;
 	}
@@ -155,7 +155,7 @@ AIL-12: Filler Status Code (CE) optional
 		this.building = building;
 	}
 
-	@JsonProperty
+	@JsonProperty("bed")
 	public String getBed() {
 		return bed;
 	}
@@ -165,7 +165,7 @@ AIL-12: Filler Status Code (CE) optional
 		this.bed = bed;
 	}
 
-	@JsonProperty
+	@JsonProperty("floor")
 	public String getFloor() {
 		return floor;
 	}
@@ -175,7 +175,7 @@ AIL-12: Filler Status Code (CE) optional
 		this.floor = floor;
 	}
 
-	@JsonProperty
+	@JsonProperty("room")
 	public String getRoom() {
 		return room;
 	}

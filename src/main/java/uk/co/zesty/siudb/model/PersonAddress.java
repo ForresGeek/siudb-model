@@ -62,7 +62,7 @@ public class PersonAddress {
 	}
 
 
-	@JsonProperty
+	@JsonProperty("street-address")
 	public String getStreetAddress() {
 		return streetAddress;
 	}
@@ -72,7 +72,7 @@ public class PersonAddress {
 		this.streetAddress = streetAddress;
 	}
 
-	@JsonProperty
+	@JsonProperty("other-designation")
 	public String getOtherDesignation() {
 		return otherDesignation;
 	}
@@ -92,7 +92,7 @@ public class PersonAddress {
 		this.city = city;
 	}
 
-	@JsonProperty
+	@JsonProperty("state-or-province")
 	public String getStateOrProvince() {
 		return stateOrProvince;
 	}
@@ -102,7 +102,7 @@ public class PersonAddress {
 		this.stateOrProvince = stateOrProvince;
 	}
 
-	@JsonProperty
+	@JsonProperty("zip-or-post-code")
 	public String getZipOrPostCode() {
 		return zipOrPostCode;
 	}
@@ -112,7 +112,7 @@ public class PersonAddress {
 		this.zipOrPostCode = zipOrPostCode;
 	}
 
-	@JsonProperty
+	@JsonProperty("address-type")
 	public String getAddressType() {
 		return addressType;
 	}
@@ -122,7 +122,7 @@ public class PersonAddress {
 		this.addressType = addressType;
 	}
 
-	@JsonProperty
+	@JsonProperty("other-geographic-designation")
 	public String getOtherGeographicDesignation() {
 		return otherGeographicDesignation;
 	}
@@ -142,7 +142,7 @@ public class PersonAddress {
 		County = county;
 	}
 
-	@JsonProperty
+	@JsonProperty("census-tract")
 	public String getCensusTract() {
 		return censusTract;
 	}

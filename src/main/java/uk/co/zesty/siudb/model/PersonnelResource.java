@@ -71,7 +71,7 @@ public class PersonnelResource {
 
 
 
-	@JsonProperty
+	@JsonProperty("set-id")
 	public Integer getSetId() {
 		return setId;
 	}
@@ -87,7 +87,7 @@ public class PersonnelResource {
 
 
 
-	@JsonProperty
+	@JsonProperty("personnel-id")
 	public String getPersonnelId() {
 		return personnelId;
 	}
@@ -103,7 +103,7 @@ public class PersonnelResource {
 
 
 
-	@JsonProperty
+	@JsonProperty("personnel-id-type")
 	public String getPersonnelIdType() {
 		return personnelIdType;
 	}
@@ -119,7 +119,7 @@ public class PersonnelResource {
 
 
 
-	@JsonProperty
+	@JsonProperty("personnel-given-name")
 	public String getPersonnelGivenName() {
 		return personnelGivenName;
 	}
@@ -135,7 +135,7 @@ public class PersonnelResource {
 
 
 
-	@JsonProperty
+	@JsonProperty("personnel-family-name")
 	public String getPersonnelFamilyName() {
 		return personnelFamilyName;
 	}
@@ -151,7 +151,7 @@ public class PersonnelResource {
 
 
 
-	@JsonProperty
+	@JsonProperty("personnel-prefix")
 	public String getPersonnelPrefix() {
 		return personnelPrefix;
 	}
@@ -167,7 +167,7 @@ public class PersonnelResource {
 
 
 
-	@JsonProperty
+	@JsonProperty("personnel-resource-role")
 	public String getPersonnelResourceRole() {
 		return personnelResourceRole;
 	}
@@ -183,7 +183,7 @@ public class PersonnelResource {
 
 
 
-	@JsonProperty
+	@JsonProperty("personnel-resource-group")
 	public String getPersonnelResourceGroup() {
 		return personnelResourceGroup;
 	}
@@ -199,7 +199,7 @@ public class PersonnelResource {
 
 
 
-	@JsonProperty
+	@JsonProperty("start-date")
 	public Date getStartDate() {
 		return startDate;
 	}
@@ -215,7 +215,7 @@ public class PersonnelResource {
 
 
 
-	@JsonProperty
+	@JsonProperty("time-offset")
 	public Integer getTimeOffset() {
 		return timeOffset;
 	}
@@ -231,7 +231,7 @@ public class PersonnelResource {
 
 
 
-	@JsonProperty
+	@JsonProperty("time-offset-units")
 	public String getTimeOffsetUnits() {
 		return timeOffsetUnits;
 	}
@@ -247,7 +247,7 @@ public class PersonnelResource {
 
 
 
-	@JsonProperty
+	@JsonProperty("duration")
 	public Integer getDuration() {
 		return duration;
 	}
@@ -263,7 +263,7 @@ public class PersonnelResource {
 
 
 
-	@JsonProperty
+	@JsonProperty("duration-units")
 	public String getDurationUnits() {
 		return durationUnits;
 	}
@@ -279,7 +279,7 @@ public class PersonnelResource {
 
 
 
-	@JsonProperty
+	@JsonProperty("allow-substitution")
 	public String getAllowSubstitution() {
 		return allowSubstitution;
 	}
@@ -295,7 +295,7 @@ public class PersonnelResource {
 
 
 
-	@JsonProperty
+	@JsonProperty("filler-status-code")
 	public String getFillerStatusCode() {
 		return fillerStatusCode;
 	}

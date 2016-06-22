@@ -39,7 +39,7 @@ public class PatientVisit {
 	private Long appointmentId;
 	
 	
-	@JsonProperty
+	@JsonProperty("visit-id")
 	public String getVisitId() {
 		return visitId;
 	}
@@ -47,7 +47,7 @@ public class PatientVisit {
 		this.visitId = visitId;
 	}
 	
-	@JsonProperty
+	@JsonProperty("specialty")
 	public String getSpecialty() {
 		return specialty;
 	}

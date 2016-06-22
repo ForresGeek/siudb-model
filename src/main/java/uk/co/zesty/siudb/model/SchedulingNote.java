@@ -31,7 +31,7 @@ public class SchedulingNote {
 	//Linked to appointment
 	private Appointment appointment;
 	
-	@JsonProperty
+	@JsonProperty("set-id")
 	public Integer getSetId() {
 		return setId;
 	}
@@ -39,7 +39,7 @@ public class SchedulingNote {
 		this.setId = setId;
 	}
 	
-	@JsonProperty
+	@JsonProperty("note-type")
 	public String getNoteType() {
 		return noteType;
 	}

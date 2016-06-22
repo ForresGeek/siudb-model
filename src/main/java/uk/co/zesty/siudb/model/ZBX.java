@@ -7,7 +7,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
+import io.katharsis.resource.annotations.JsonApiId;
 import io.katharsis.resource.annotations.JsonApiResource;
 
 /*
@@ -43,7 +45,7 @@ public class ZBX {
 			this.appointment = appointment;
 		}
 		
-		
+		@JsonApiId
 		@Id 
 		@GeneratedValue
 		public Long getId() {
@@ -52,6 +54,8 @@ public class ZBX {
 		public void setId(Long id) {
 			this.id = id;
 		}
+		
+		@JsonProperty("set-id")
 		public String getSetId() {
 			return setId;
 		}
@@ -76,6 +80,8 @@ public class ZBX {
 		public void setFlag(String flag) {
 			this.flag = flag;
 		}
+		
+		@JsonProperty("note-type")
 		public String getNoteType() {
 			return noteType;
 		}

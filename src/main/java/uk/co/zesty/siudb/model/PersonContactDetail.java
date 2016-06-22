@@ -30,7 +30,7 @@ public class PersonContactDetail {
 	private String contactType;			//e.g. EMAIL
 	private String contactUse;			//e.g. HOME
 	
-	@JsonProperty
+	@JsonProperty("contact-detail")
 	public String getContactDetail() {
 		return contactDetail;
 	}
@@ -38,7 +38,7 @@ public class PersonContactDetail {
 		this.contactDetail = contactDetail;
 	}
 	
-	@JsonProperty
+	@JsonProperty("contact-type")
 	public String getContactType() {
 		return contactType;
 	}
@@ -46,7 +46,7 @@ public class PersonContactDetail {
 		this.contactType = contactType;
 	}
 	
-	@JsonProperty
+	@JsonProperty("contact-use")
 	public String getContactUse() {
 		return contactUse;
 	}

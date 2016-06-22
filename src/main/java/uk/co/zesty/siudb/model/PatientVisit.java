@@ -69,7 +69,7 @@ public class PatientVisit {
 	
 
 	@Id  
-	@JsonApiId
+	@JsonApiId()
     @GeneratedValue(generator="myGenerator")  
     @GenericGenerator(name="myGenerator", strategy="foreign", parameters=@Parameter(value="appointment", name = "property")) 
 	public Long getAppointmentId() {

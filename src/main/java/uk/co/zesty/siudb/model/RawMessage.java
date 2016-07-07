@@ -42,7 +42,7 @@ public class RawMessage implements Serializable {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	
-	@Column(name="rawText",length=2048)
+	@Column(name="rawText",columnDefinition="text")
 	private String rawText;
 
 	@Column(name="msgId")

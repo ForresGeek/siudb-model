@@ -19,7 +19,7 @@ import io.katharsis.resource.annotations.JsonApiResource;
  * 
  */
 @Entity
-@JsonApiResource(type = "generalresource")
+@JsonApiResource(type = "general_resource")
 public class GeneralResource {
 
 	private Long id;
@@ -56,7 +56,7 @@ public class GeneralResource {
 		this.id = id;
 	}
 
-	@JsonProperty("set-id")
+	@JsonProperty("set_id")
 	public Integer getSetId() {
 		return setId;
 	}
@@ -66,7 +66,7 @@ public class GeneralResource {
 		this.setId = setId;
 	}
 
-	@JsonProperty("segment-action-code")
+	@JsonProperty("segment_action_code")
 	public String getSegmentActionCode() {
 		return segmentActionCode;
 	}
@@ -76,7 +76,7 @@ public class GeneralResource {
 		this.segmentActionCode = segmentActionCode;
 	}
 
-	@JsonProperty("resource-id")
+	@JsonProperty("resource_id")
 	public String getResourceId() {
 		return resourceId;
 	}
@@ -86,7 +86,7 @@ public class GeneralResource {
 		this.resourceId = resourceId;
 	}
 
-	@JsonProperty("resource-type")
+	@JsonProperty("resource_type")
 	public String getResourceType() {
 		return resourceType;
 	}
@@ -96,7 +96,7 @@ public class GeneralResource {
 		this.resourceType = resourceType;
 	}
 
-	@JsonProperty("start-time")
+	@JsonProperty("start_time")
 	public Date getStartTime() {
 		return startTime;
 	}
@@ -106,7 +106,7 @@ public class GeneralResource {
 		this.startTime = startTime;
 	}
 
-	@JsonProperty("time-offset")
+	@JsonProperty("time_offset")
 	public Integer getTimeOffset() {
 		return timeOffset;
 	}
@@ -116,7 +116,7 @@ public class GeneralResource {
 		this.timeOffset = timeOffset;
 	}
 
-	@JsonProperty("time-offset-units")
+	@JsonProperty("time_offset_units")
 	public String getTimeOffsetUnits() {
 		return timeOffsetUnits;
 	}
@@ -136,7 +136,7 @@ public class GeneralResource {
 		this.duration = duration;
 	}
 
-	@JsonProperty("duration-units")
+	@JsonProperty("duration_units")
 	public String getDurationUnits() {
 		return durationUnits;
 	}

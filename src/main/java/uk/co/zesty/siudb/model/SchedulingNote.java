@@ -16,7 +16,7 @@ import io.katharsis.resource.annotations.JsonApiResource;
 
 
 @Entity
-@JsonApiResource(type = "schedulingnote")
+@JsonApiResource(type = "scheduling_note")
 public class SchedulingNote {
 	
 	/* Class to hold NTE segments from Cerner Scheduling messages */
@@ -31,7 +31,7 @@ public class SchedulingNote {
 	//Linked to appointment
 	private Appointment appointment;
 	
-	@JsonProperty("set-id")
+	@JsonProperty("set_id")
 	public String getSetId() {
 		return setId;
 	}
@@ -39,7 +39,7 @@ public class SchedulingNote {
 		this.setId = setId;
 	}
 	
-	@JsonProperty("note-type")
+	@JsonProperty("note_type")
 	public String getNoteType() {
 		return noteType;
 	}
@@ -47,7 +47,7 @@ public class SchedulingNote {
 		this.noteType = noteType;
 	}
 	
-	@JsonProperty
+	@JsonProperty("note_text")
 	@Column(columnDefinition="TEXT")
 	public String getNote() {
 		return note;

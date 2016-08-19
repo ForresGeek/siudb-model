@@ -86,7 +86,7 @@ public class Person {
 	
 	
 	
-	@JsonProperty
+	@JsonProperty("sex")
 	public String getSex() {
 		return sex;
 	}
@@ -94,7 +94,7 @@ public class Person {
 		this.sex = sex;
 	}
 	
-	@JsonProperty
+	@JsonProperty("surname")
 	public String getSurname() {
 		return surname;
 	}
@@ -102,7 +102,7 @@ public class Person {
 		this.surname = surname;
 	}
 	
-	@JsonProperty
+	@JsonProperty("forename")
 	public String getForename() {
 		return forename;
 	}
@@ -110,7 +110,7 @@ public class Person {
 		this.forename = forename;
 	}
 	
-	@JsonProperty("other-names")
+	@JsonProperty("othernames")
 	public String getOtherNames() {
 		return otherNames;
 	}
@@ -120,7 +120,7 @@ public class Person {
 	}
 	
 	
-	@JsonProperty
+	@JsonProperty("title")
 	public String getTitle() {
 		return Title;
 	}
@@ -129,7 +129,7 @@ public class Person {
 	}
 	
 	
-	@JsonProperty
+	@JsonProperty("dob")
 	public Date getDob() {
 		return dob;
 	}
@@ -150,7 +150,7 @@ public class Person {
 	}
 	
 	@JsonApiToMany(lazy=false)
-	@JsonProperty
+	@JsonProperty("contacts")
 	@JsonApiIncludeByDefault
 	@OneToMany(mappedBy = "person", cascade=CascadeType.ALL,orphanRemoval=true)
 	public Set<PersonContactDetail> getContacts() {
@@ -162,7 +162,7 @@ public class Person {
 	}
 	
 	@JsonApiToMany
-	@JsonProperty
+	@JsonProperty("addresses")
 	@OneToMany(mappedBy = "person", cascade=CascadeType.ALL,orphanRemoval=true)
 	public Set<PersonAddress> getAddresses() {
 		return addresses;

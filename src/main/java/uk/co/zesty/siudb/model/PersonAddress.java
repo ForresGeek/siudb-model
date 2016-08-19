@@ -13,7 +13,7 @@ import io.katharsis.resource.annotations.JsonApiId;
 import io.katharsis.resource.annotations.JsonApiResource;
 
 @Entity
-@JsonApiResource(type = "personaddress")
+@JsonApiResource(type = "person_address")
 public class PersonAddress {
 
 	//Definiton based on HL7v2.3 XAD structure.
@@ -62,7 +62,7 @@ public class PersonAddress {
 	}
 
 
-	@JsonProperty("street-address")
+	@JsonProperty("street_address")
 	public String getStreetAddress() {
 		return streetAddress;
 	}
@@ -72,7 +72,7 @@ public class PersonAddress {
 		this.streetAddress = streetAddress;
 	}
 
-	@JsonProperty("other-designation")
+	@JsonProperty("other_designation")
 	public String getOtherDesignation() {
 		return otherDesignation;
 	}
@@ -82,7 +82,7 @@ public class PersonAddress {
 		this.otherDesignation = otherDesignation;
 	}
 
-	@JsonProperty
+	@JsonProperty("city")
 	public String getCity() {
 		return city;
 	}
@@ -92,7 +92,7 @@ public class PersonAddress {
 		this.city = city;
 	}
 
-	@JsonProperty("state-or-province")
+	@JsonProperty("state_or_province")
 	public String getStateOrProvince() {
 		return stateOrProvince;
 	}
@@ -102,7 +102,7 @@ public class PersonAddress {
 		this.stateOrProvince = stateOrProvince;
 	}
 
-	@JsonProperty("zip-or-post-code")
+	@JsonProperty("zip_or_post_code")
 	public String getZipOrPostCode() {
 		return zipOrPostCode;
 	}
@@ -112,7 +112,7 @@ public class PersonAddress {
 		this.zipOrPostCode = zipOrPostCode;
 	}
 
-	@JsonProperty("address-type")
+	@JsonProperty("address_type")
 	public String getAddressType() {
 		return addressType;
 	}
@@ -122,7 +122,7 @@ public class PersonAddress {
 		this.addressType = addressType;
 	}
 
-	@JsonProperty("other-geographic-designation")
+	@JsonProperty("other_geographic_designation")
 	public String getOtherGeographicDesignation() {
 		return otherGeographicDesignation;
 	}
@@ -132,7 +132,7 @@ public class PersonAddress {
 		this.otherGeographicDesignation = otherGeographicDesignation;
 	}
 
-	@JsonProperty
+	@JsonProperty("county")
 	public String getCounty() {
 		return County;
 	}
@@ -142,7 +142,7 @@ public class PersonAddress {
 		County = county;
 	}
 
-	@JsonProperty("census-tract")
+	@JsonProperty("census_tract")
 	public String getCensusTract() {
 		return censusTract;
 	}

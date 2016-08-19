@@ -15,7 +15,7 @@ import io.katharsis.resource.annotations.JsonApiId;
 import io.katharsis.resource.annotations.JsonApiResource;
 
 @Entity
-@JsonApiResource(type = "personnelresource")
+@JsonApiResource(type = "personnel_resource")
 public class PersonnelResource {
 
 	
@@ -71,7 +71,7 @@ public class PersonnelResource {
 
 
 
-	@JsonProperty("set-id")
+	@JsonProperty("set_id")
 	public Integer getSetId() {
 		return setId;
 	}
@@ -87,7 +87,7 @@ public class PersonnelResource {
 
 
 
-	@JsonProperty("personnel-id")
+	@JsonProperty("personnel_id")
 	public String getPersonnelId() {
 		return personnelId;
 	}
@@ -103,7 +103,7 @@ public class PersonnelResource {
 
 
 
-	@JsonProperty("personnel-id-type")
+	@JsonProperty("personnel_id_type")
 	public String getPersonnelIdType() {
 		return personnelIdType;
 	}
@@ -119,7 +119,7 @@ public class PersonnelResource {
 
 
 
-	@JsonProperty("personnel-given-name")
+	@JsonProperty("personnel_given_name")
 	public String getPersonnelGivenName() {
 		return personnelGivenName;
 	}
@@ -135,7 +135,7 @@ public class PersonnelResource {
 
 
 
-	@JsonProperty("personnel-family-name")
+	@JsonProperty("personnel_family_name")
 	public String getPersonnelFamilyName() {
 		return personnelFamilyName;
 	}
@@ -151,7 +151,7 @@ public class PersonnelResource {
 
 
 
-	@JsonProperty("personnel-prefix")
+	@JsonProperty("personnel_prefix")
 	public String getPersonnelPrefix() {
 		return personnelPrefix;
 	}
@@ -167,7 +167,7 @@ public class PersonnelResource {
 
 
 
-	@JsonProperty("personnel-resource-role")
+	@JsonProperty("personnel_resource_role")
 	public String getPersonnelResourceRole() {
 		return personnelResourceRole;
 	}
@@ -183,7 +183,7 @@ public class PersonnelResource {
 
 
 
-	@JsonProperty("personnel-resource-group")
+	@JsonProperty("personnel_resource_group")
 	public String getPersonnelResourceGroup() {
 		return personnelResourceGroup;
 	}
@@ -199,7 +199,7 @@ public class PersonnelResource {
 
 
 
-	@JsonProperty("start-date")
+	@JsonProperty("start_date")
 	public Date getStartDate() {
 		return startDate;
 	}
@@ -215,7 +215,7 @@ public class PersonnelResource {
 
 
 
-	@JsonProperty("time-offset")
+	@JsonProperty("time_offset")
 	public Integer getTimeOffset() {
 		return timeOffset;
 	}
@@ -231,7 +231,7 @@ public class PersonnelResource {
 
 
 
-	@JsonProperty("time-offset-units")
+	@JsonProperty("time_offset_units")
 	public String getTimeOffsetUnits() {
 		return timeOffsetUnits;
 	}
@@ -263,7 +263,7 @@ public class PersonnelResource {
 
 
 
-	@JsonProperty("duration-units")
+	@JsonProperty("duration_units")
 	public String getDurationUnits() {
 		return durationUnits;
 	}
@@ -279,7 +279,7 @@ public class PersonnelResource {
 
 
 
-	@JsonProperty("allow-substitution")
+	@JsonProperty("allow_substitution")
 	public String getAllowSubstitution() {
 		return allowSubstitution;
 	}
@@ -295,7 +295,7 @@ public class PersonnelResource {
 
 
 
-	@JsonProperty("filler-status-code")
+	@JsonProperty("filler_status_code")
 	public String getFillerStatusCode() {
 		return fillerStatusCode;
 	}

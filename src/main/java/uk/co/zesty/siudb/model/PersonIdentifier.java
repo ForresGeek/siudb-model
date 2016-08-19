@@ -21,7 +21,7 @@ import javax.persistence.JoinColumn;
 //@Table(uniqueConstraints={
 //	    @UniqueConstraint(columnNames = {"identifier", "identifiertype","identifierassigningauthority"})
 //	}) 
-@JsonApiResource(type = "personidentifier")
+@JsonApiResource(type = "person_identifier")
 public class PersonIdentifier {
 
 
@@ -35,7 +35,7 @@ public class PersonIdentifier {
 	private Person person;
 
 
-	@JsonProperty("identifier-type")
+	@JsonProperty("identifier_type")
 	public String getIdentifierType() {
 		return identifierType;
 	}
@@ -45,7 +45,7 @@ public class PersonIdentifier {
 		this.identifierType = identifierType;
 	}
 
-	@JsonProperty
+	@JsonProperty("identifier")
 	public String getIdentifier() {
 		return identifier;
 	}
@@ -55,7 +55,7 @@ public class PersonIdentifier {
 		this.identifier = identifier;
 	}
 
-	@JsonProperty("identifier-assigning-authority")
+	@JsonProperty("identifier_assigning_authority")
 	public String getIdentifierAssigningAuthority() {
 		return identifierAssigningAuthority;
 	}

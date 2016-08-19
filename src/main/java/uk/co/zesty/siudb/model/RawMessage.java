@@ -82,7 +82,7 @@ public class RawMessage implements Serializable {
 		this.id = id;
 	}
 
-	@JsonProperty("raw-text")
+	@JsonProperty("raw_text")
 	public String getRawText() {
 		return rawText;
 	}
@@ -91,7 +91,7 @@ public class RawMessage implements Serializable {
 		this.rawText = rawText;
 	}
 
-	@JsonProperty("msg-id")
+	@JsonProperty("msg_id")
 	public String getMsgId() {
 		return msgId;
 	}
@@ -100,7 +100,7 @@ public class RawMessage implements Serializable {
 		this.msgId = msgId;
 	}
 
-	@JsonProperty("msg-type")
+	@JsonProperty("msg_type")
 	public String getMsgType() {
 		return msgType;
 	}
@@ -109,7 +109,7 @@ public class RawMessage implements Serializable {
 		this.msgType = msgType;
 	}
 
-	@JsonProperty("date-time-received")
+	@JsonProperty("date_time_received")
 	public Date getDtmReceived() {
 		return dtmReceived;
 	}
@@ -118,7 +118,7 @@ public class RawMessage implements Serializable {
 		this.dtmReceived = dtmReceived;
 	}
 
-	@JsonProperty("processed-flag")
+	@JsonProperty("processed_flag")
 	public Boolean getProcessedFlag() {
 		return processedFlag;
 	}
@@ -128,7 +128,7 @@ public class RawMessage implements Serializable {
 	}
 
 	
-	@JsonProperty("processed-status")
+	@JsonProperty("processed_status")
 	public String getProcessedStatus() {
 		return processedStatus;
 	}
@@ -138,7 +138,7 @@ public class RawMessage implements Serializable {
 	}
 
 	
-	@JsonProperty("date-time-processed")
+	@JsonProperty("date_time_processed")
 	public Date getDtmProcessed() {
 		return dtmProcessed;
 	}
@@ -149,7 +149,7 @@ public class RawMessage implements Serializable {
 
 	
 	
-	@JsonProperty("status-message")
+	@JsonProperty("status_message")
 	public String getStatusMessage() {
 		return statusMessage;
 	}

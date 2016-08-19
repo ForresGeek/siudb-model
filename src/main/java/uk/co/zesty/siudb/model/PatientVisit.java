@@ -18,7 +18,7 @@ import io.katharsis.resource.annotations.JsonApiId;
 import io.katharsis.resource.annotations.JsonApiResource;
 
 @Entity
-@JsonApiResource(type = "patientvisit")
+@JsonApiResource(type = "patient_visit")
 public class PatientVisit {
 
 	/*
@@ -39,7 +39,7 @@ public class PatientVisit {
 	private Long appointmentId;
 	
 	
-	@JsonProperty("visit-id")
+	@JsonProperty("visit_id")
 	public String getVisitId() {
 		return visitId;
 	}

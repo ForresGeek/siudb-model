@@ -19,7 +19,7 @@ import io.katharsis.resource.annotations.JsonApiResource;
 
 
 @Entity
-@JsonApiResource(type = "locationresource")
+@JsonApiResource(type = "location_resource")
 public class LocationResource {
 	
 	
@@ -73,7 +73,7 @@ AIL-12: Filler Status Code (CE) optional
 		this.appointment = appointment;
 	}
 
-	@JsonProperty("set-id")
+	@JsonProperty("set_id")
 	public Integer getSetId() {
 		return setId;
 	}
@@ -83,7 +83,7 @@ AIL-12: Filler Status Code (CE) optional
 		this.setId = setId;
 	}
 
-	@JsonProperty("segment-action-code")
+	@JsonProperty("segment_action_code")
 	public String getSegmentActionCode() {
 		return segmentActionCode;
 	}
@@ -93,7 +93,7 @@ AIL-12: Filler Status Code (CE) optional
 		this.segmentActionCode = segmentActionCode;
 	}
 
-	@JsonProperty("location-type")
+	@JsonProperty("location_type")
 	public String getLocationType() {
 		return locationType;
 	}
@@ -103,7 +103,7 @@ AIL-12: Filler Status Code (CE) optional
 		this.locationType = locationType;
 	}
 
-	@JsonProperty("location-group")
+	@JsonProperty("location_group")
 	public String getLocationGroup() {
 		return locationGroup;
 	}
@@ -125,7 +125,7 @@ AIL-12: Filler Status Code (CE) optional
 		return builder.toString();
 	}
 
-	@JsonProperty("point-of-care")
+	@JsonProperty("point_of_care")
 	public String getPointOfCare() {
 		return pointOfCare;
 	}
